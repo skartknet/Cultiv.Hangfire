@@ -41,3 +41,16 @@ namespace MyNamespace
 In the Umbraco backoffice it will look a little something like this:
 
 ![Screenshot of Cultiv.Hangfire installed in Umbraco](https://raw.githubusercontent.com/nul800sebastiaan/Cultiv.Hangfire/main/screenshot.png)
+
+## Settings
+You can disable the Hangfire server (but still show the backoffice dashboard). This might be handy on some occasions like having a load-balanced setup. In a case like this you probably only should run the Hangfire server on your Master instance and not the public ones.
+
+By default the server will be enabled. To disable it, use the following settings on your `appsettings.json` file.
+``` json
+{
+  "Hangfire": {
+    "Server": {
+      "Disabled": true
+    }
+  }
+}
